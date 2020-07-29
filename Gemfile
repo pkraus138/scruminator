@@ -22,6 +22,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "annotate"
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen"
