@@ -23,6 +23,8 @@ end
 
 group :development do
   gem "annotate"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen"
