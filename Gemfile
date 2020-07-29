@@ -13,15 +13,20 @@ gem "turbolinks"
 gem "webpacker"
 
 group :development, :test do
-  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "rspec-rails"
 end
 
 group :development do
   gem "listen"
-  gem "rubocop"
   gem "spring"
   gem "spring-watcher-listen"
   gem "web-console"
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :test do
+  gem "bundler-audit"
+  gem "shoulda-matchers"
+end
+
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
