@@ -16,5 +16,6 @@ RSpec.describe Team, type: :model do
 
   context "associations" do
     it { should have_many(:users) }
+    it { should have_many(:entries).through(:users) }
   end
 end

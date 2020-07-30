@@ -31,5 +31,6 @@ RSpec.describe User, type: :model do
 
   context "associations" do
     it { should belong_to(:team).optional }
+    it { should have_many(:entries) }
   end
 end

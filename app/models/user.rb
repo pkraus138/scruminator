@@ -27,4 +27,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :team, optional: true
+  has_many :entries
 end
