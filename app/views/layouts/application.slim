@@ -11,9 +11,12 @@ html lang="en"
     = javascript_pack_tag "application", "data-turbolinks-track": "reload"
 
   body
+    = render partial: "shared/navbar"
     - if notice
       p.alert.alert-success= notice
     - if alert
       p.alert.alert-danger= alert
 
-    = yield
+    .container
+      = yield
+    = render partial: "shared/footer"
