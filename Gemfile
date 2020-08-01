@@ -5,6 +5,7 @@ ruby "2.7.1"
 
 gem "bootsnap", require: false
 gem "devise"
+gem "font-awesome-rails"
 gem "jbuilder"
 gem "pg"
 gem "puma"
