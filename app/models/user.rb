@@ -31,4 +31,8 @@ class User < ApplicationRecord
 
   belongs_to :team, optional: true
   has_many :entries, dependent: :destroy
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
