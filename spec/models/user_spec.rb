@@ -3,8 +3,11 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  admin                  :boolean          default(FALSE)
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  last_name              :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -26,7 +29,10 @@ require "rails_helper"
 
 RSpec.describe User, type: :model do
   context "database columns" do
+    it { should have_db_column(:admin).of_type(:boolean) }
     it { should have_db_column(:email).of_type(:string) }
+    it { should have_db_column(:first_name).of_type(:string) }
+    it { should have_db_column(:last_name).of_type(:string) }
   end
 
   context "associations" do
