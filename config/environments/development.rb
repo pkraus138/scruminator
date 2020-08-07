@@ -27,4 +27,10 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.hosts << "scruminator.test"
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.add_footer = true
+    Bullet.skip_html_injection = false
+  end
 end
