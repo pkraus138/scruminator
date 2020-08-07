@@ -22,4 +22,8 @@
 class Entry < ApplicationRecord
   belongs_to :user
   validates :user_id, presence: true
+
+  def self.for_date(date)
+    where(date: date)
+  end
 end

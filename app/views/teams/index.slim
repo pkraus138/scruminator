@@ -1,0 +1,19 @@
+.my-3
+  h1.d-inline-block Teams:
+
+table.table
+  thead
+    tr
+      th id
+      th Name
+      th Users
+  tbody
+    - if @teams
+      - @teams.each do |team|
+        tr
+          td= team.id
+          td= link_to team.name, team_path(team, date: Date.today)
+          td= team.users.count
+    - else
+      tr
+        td colspan="3" No teams found

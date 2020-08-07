@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :teams, only: %i[index show]
+
+  resources :users do
+    resources :entries, only: %i[create edit new update]
+  end
 end

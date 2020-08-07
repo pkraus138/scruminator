@@ -1,0 +1,32 @@
+.my-3
+  h1.d-inline-block= "#{@team.name} Entries:"
+  h3.d-inline-block.pull-right= @date.strftime("%B %d, %Y")
+
+- if current_user.entries.for_date(@date)
+  = link_to "Add entry for today", new_user_entry_path(current_user, date: @date)
+- else
+  = link_to "Edit entry for today", edit_user_entry_path(current_user, date: @date)
+
+- if @team.users.empty?
+  .card.my-3
+    .card-body
+      em.card-text This team doesn't have any users :(
+- elsif @entries.empty?
+  .card.my-3
+    .card-body
+      em.card-text There are currently no entries for today.
+- else
+  - @entries.each do |entry|
+    .card.my-3
+      .card-header
+        = entry.user.full_name
+      .card-body
+        p= 
+
+- if @users_not_reporting.any?
+  p
+    strong Users not reporting:
+    - @users_not_reporting.each do |user|
+      span.block.ml-2= user.full_name
+- else
+  p All users reported! 🎉
