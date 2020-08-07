@@ -1,0 +1,13 @@
+
+= form_with model: @entry, url: user_entries_path, local: true do |f|
+  = f.hidden_field :date, value: @date
+  .form-group
+    = f.label :yesterday
+    = f.text_field :yesterday, class: "form-control"
+  .form-group
+    = f.label :today
+    = f.text_field :today, class: "form-control"
+  .form-group
+    = f.label :impediments
+    = f.text_field :impediments, class: "form-control"
+  = f.submit class: "btn btn-primary"
