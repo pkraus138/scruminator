@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.1"
+ruby "2.7.3"
 
 gem "bootsnap", require: false
 gem "devise"
@@ -9,7 +9,7 @@ gem "font-awesome-rails"
 gem "jbuilder"
 gem "pg"
 gem "puma"
-gem "rails"
+gem "rails", "6.0.3.6"
 gem "sass-rails"
 gem "slim-rails"
 gem "turbolinks"
